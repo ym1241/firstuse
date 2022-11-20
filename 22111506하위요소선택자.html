@@ -1,0 +1,28 @@
+//하위 요소 선택자
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>선택자</title>
+    <script src = "jquery.js"></script>
+    <script>
+        $(function(){
+            $("#wrap h1") //id 속성 wrap중에 h1 이 있는 것들중
+            .css({
+                "background-color":"yellow",
+                "border":"2px dashed #f00"
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id = "wrap">
+        <h1>인접 관계 선택자</h1> //노랑이 칸막
+        <p>내용1</p>
+        <selection>
+            <h1>하위 요소 선택자</h1>
+            <h2>내용2</h2>
+        </selection>
+    </div>
+</body>
+</html>
