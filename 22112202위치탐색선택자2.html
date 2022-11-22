@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>탐색 선택자</title>
+    <script src = "js/jquery.js"></script> 
+    <!-- 제이쿼리 파일 어디 -->
+    <script>
+        $(function(){
+            $("#menu li:even") //id 속성이 menu인 li요소 중에 홀수li요소들만
+            .css({"background-color":"#f00"});
+            // even이면 홀수인데 0 2 4 6 8이니 인덱스는 짝수, 내용1 내용3이 빨강색으로 칠해짐
+        //인덱스면 홀수가 짝수가 되지만 사실     
+            $("#menu li:odd") //아이디 속석이 메뉴인 곳에 li 요소 중에 짝수li번째 들만
+            .css({"background-color":"#00f"});
+            // odd이면 짝수인데 0부터 시작하니 1 3 5 7 9 번쨰 로 인덱스로는 홀수, 내용2 내용4에 파란색으로 칠해짐
+            });
+    </script>
+</head>
+<body>
+    <h1>탐색 선택자</h1>
+    <ul id="menu">
+        <li>내용1</li>
+        <li>내용2</li>
+        <li>내용3</li>
+        <li>내용4</li>
+    </ul>
+</body>
+</html>

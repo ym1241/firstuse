@@ -1,0 +1,36 @@
+ <!-- nth - child(숫자n) / nth-last-of-type(숫자) 선택자 nth를 n은변수고 n번째 라고 생각 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>탐색 선택자</title>
+    <script src = "js/jquery.js"></script> 
+    <!-- 제이쿼리 파일 어디 -->
+    <script>
+        $(function(){
+            $("#menu1 li:nth-child(1)")// 숫자이기떄문에 첫 li=내용1
+            .css({"background-color":"#ff0"}); //노란생
+           
+            $("#menu1 li:nth-child(2n)")// 2의배수 애기들 내용1-2,1-4
+            .css({"border":"2px dashed#f00"}); //dashed 점선 2px
+
+            $("#menu2 li:nth-last-child(2)") //lastchild 2 는 마지막에서 두번째 내용2-2
+            .css({"background-color":"#0ff"});//아쿠아
+            });
+    </script>
+</head>
+<body>
+    <h1>탐색 선택자</h1>
+    <ul id="menu1">
+        <li>내용1-1</li>
+        <li>내용1-2</li>
+        <li>내용1-3</li>
+        <li>내용1-4</li>
+    </ul>
+    <ul id="menu2">
+        <li>내용2-1</li>
+        <li>내용2-2</li>
+        <li>내용2-3</li>
+    </ul>
+</body>
+</html>
