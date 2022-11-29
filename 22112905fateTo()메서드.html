@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        $(function(){
+            $(".btn2").hide();
+
+            $(".btn1").on("click", function(){
+                $(".box").slideUp(1000, "linear",
+                function(){
+                    $(".btn1").hide();
+                    $(".btn2").show();
+                });
+            });
+
+            $(".btn2").on("click", function(){
+                $(".box").fadein(1000, "swing",
+                function(){
+                    $(".btn2").hide();
+                    $(".btn1").show();
+                });
+            });
+
+            $(".btn3").on("click", function(){
+                $(".box").slideToggle(1000, "linear");
+            });
+
+            $(".btn4").on("click", function(){
+                $(".box").fadeTo("fast",0.3);
+            });
+
+            $(".btn5").on("click", function(){
+                $(".box").fadeTo("fast",1);
+            });
+        });
+    </script>
+<style>
+    .content{
+        width:400px;
+        background-color: #eee;
+    }
+</style>
+</head>
+<body>
+    <p>
+        <button class="btn1">slideUp</button>
+        <button class="btn2">fadeIn</button>
+    </p>
+    <p>
+        <button class="btn3">toggleSlide</button>
+    </p>
+    <p>
+        <button class="btn4">fadeTo(0.3)</button>
+        <button class="btn5">fadeTo</button>
+    </p>
+    <div class="box">
+        <div class="content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, doloribus neque incidunt quo nemo ullam dignissimos. Ea nam excepturi ullam distinctio! Nobis, labore non molestias ducimus nemo vitae nam consectetur.
+        </div>
+    </div>
+</body>
+</html>

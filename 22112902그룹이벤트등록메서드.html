@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>그룹에빈트등록메서드</title>
+    <script src = "js/jquery.js"></script> 
+    <script>
+        $(function(){
+            $(".btn1").click(function(){
+                $(".btn1").parent().next().css({"color" : "#f00"}); <!--이게 무슨 동작을 하는지 서술하시오-->
+            });<!-- 그냥 색깔이 바뀌는거 아니겠냐 next는 버튼1 다음 내용1을 언급한다-->
+            $(".btn2").on({ <!--그룹on 중에서 mouseover()와 -->
+                "mouseover focus" : function(){
+                    $(".btn2").parent().next().css({"color" : "#0f0"});
+                },
+                "mouseout blur" : function() { <!--mouse blur로 하니까 이벤트가 달라짐-->
+                    $(".btn2").parent().next().css({"color" : "#000"});
+                },
+            });
+
+            $(".btn1").off("click"); <!--눌러도, 갔다 대도 아무 변화가 없음-->
+            $(".btn2").off("mouseover focus"); <!--아니 그냥 다 제거하면 되지 왜제거 메서드를 사용하는거냐..-->
+        });<!--코드가 엄청 많으면 찾기 어렵다는거지-->
+    </script>
+</head>
+<body>
+    <p>
+        <button class="btn1">버튼1</button>
+    </p>
+    <p>내용1</p>
+    <p>
+        <button class="btn2">버튼2</button>
+    </p>
+    <p>내용2</p>
+</body>
+</html>
